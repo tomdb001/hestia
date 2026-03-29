@@ -89,7 +89,7 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 8, scale: 0.97 }}
                   transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute right-0 top-10 w-80 bg-white rounded-2xl z-50 overflow-hidden"
+                  className="absolute right-0 top-10 w-[min(320px,calc(100vw-2rem))] bg-white rounded-2xl z-50 overflow-hidden"
                   style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.18), 0 0 0 1px rgba(0,0,0,0.06)' }}
                 >
                   {/* Popup header */}

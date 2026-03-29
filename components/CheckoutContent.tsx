@@ -77,7 +77,7 @@ export default function CheckoutContent() {
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl border border-gray-100 p-6 space-y-4" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
           <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Vos informations</p>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label htmlFor="prenom" className="block text-xs font-semibold text-gray-600 mb-1.5">Prénom</label>
               <input
