@@ -49,6 +49,7 @@ export default function Header() {
               width={72}
               height={72}
               className="object-contain"
+              style={{ transform: 'scale(1.6)', transformOrigin: 'center' }}
               priority
             />
           </Link>
