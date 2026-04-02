@@ -46,8 +46,8 @@ export default function Header() {
             <Image
               src="/screenshots/Logo-TIEproject.png"
               alt="Hestia"
-              width={180}
-              height={60}
+              width={72}
+              height={72}
               className="object-contain"
               priority
             />
