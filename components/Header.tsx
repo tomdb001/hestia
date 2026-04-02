@@ -44,12 +44,11 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/screenshots/Logo-TIEproject.png"
+              src="/screenshots/Logo-TIEproject-crop.png"
               alt="Hestia"
-              width={72}
-              height={72}
+              width={200}
+              height={90}
               className="object-contain"
-              style={{ transform: 'scale(1.6)', transformOrigin: 'center' }}
               priority
             />
           </Link>
