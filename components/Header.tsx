@@ -38,13 +38,13 @@ export default function Header() {
     <>
       <motion.header
         style={{ boxShadow: shadow }}
-        className="fixed top-0 inset-x-0 z-50 bg-[#0d3332] h-20 flex items-center px-6 md:px-10"
+        className="fixed top-0 inset-x-0 z-50 bg-[#103a39] h-20 flex items-center px-6 md:px-10"
       >
         <div className="w-full max-w-6xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/screenshots/newlogo.png"
+              src="/screenshots/Logo-TIEproject.png"
               alt="Hestia"
               width={180}
               height={60}
@@ -196,7 +196,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-20 inset-x-0 z-40 bg-[#0d3332] border-t border-white/10 px-6 py-4 md:hidden"
+            className="fixed top-20 inset-x-0 z-40 bg-[#103a39] border-t border-white/10 px-6 py-4 md:hidden"
           >
             <nav className="flex flex-col gap-1">
               {nav.map(item => (
