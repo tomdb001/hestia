@@ -15,11 +15,26 @@ export default function TarifsContent() {
   }
 
   const inclus = [
-    { icon: '📱', label: 'Tablette Hestia', desc: 'Écran tactile résistant aux éclaboussures' },
-    { icon: '🔩', label: 'Support mural', desc: 'Installation sans perçage' },
-    { icon: '🔌', label: 'Câble USB-C', desc: 'Charge rapide, 1,5 mètre' },
-    { icon: '🔄', label: 'Mises à jour incluses', desc: 'Nouvelles fonctionnalités gratuites' },
-    { icon: '🛠', label: 'Support technique', desc: 'Assistance par e-mail, réponse sous 24h' },
+    {
+      icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>,
+      label: 'Tablette Hestia', desc: 'Écran tactile résistant aux éclaboussures',
+    },
+    {
+      icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22V8"/><path d="M5 12H2a10 10 0 0020 0h-3"/><circle cx="12" cy="5" r="3"/></svg>,
+      label: 'Support mural', desc: 'Installation sans perçage',
+    },
+    {
+      icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
+      label: 'Câble USB-C', desc: 'Charge rapide, 1,5 mètre',
+    },
+    {
+      icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>,
+      label: 'Mises à jour incluses', desc: 'Nouvelles fonctionnalités gratuites',
+    },
+    {
+      icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/><path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>,
+      label: 'Support technique', desc: 'Assistance par e-mail, réponse sous 24h',
+    },
   ];
 
   const faq = [
@@ -82,7 +97,7 @@ export default function TarifsContent() {
             <ul className="space-y-4 mb-8">
               {inclus.map(item => (
                 <li key={item.label} className="flex items-start gap-3">
-                  <span className="text-xl shrink-0">{item.icon}</span>
+                  <span className="shrink-0 text-[#30938d]">{item.icon}</span>
                   <div>
                     <p className="text-[#0f1f1e] font-semibold text-sm">{item.label}</p>
                     <p className="text-gray-400 text-xs mt-0.5">{item.desc}</p>

@@ -40,7 +40,7 @@ export function DashboardScreen() {
     <div className="w-full h-full bg-[#f5f6f7] flex flex-col text-[#111]" style={{ fontSize: 11 }}>
       {/* Header */}
       <div className="bg-white px-4 pt-3 pb-2.5 border-b border-gray-100">
-        <p className="text-gray-400 text-[9px]">Bonjour 👋</p>
+        <p className="text-gray-400 text-[9px]">Bonjour</p>
         <p className="font-black text-base leading-tight">Mon Frigo</p>
       </div>
 
@@ -50,7 +50,10 @@ export function DashboardScreen() {
           <div className="px-3 py-2.5">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-white font-bold text-[10px]">⚠ Attention !</p>
+                <p className="text-white font-bold text-[10px]">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" style={{display:'inline',marginRight:3}}><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  Attention !
+                </p>
                 <p className="text-white/80 text-[9px] mt-0.5">3 produits périmés</p>
               </div>
               <span className="text-white/60 text-[10px]">×</span>
@@ -66,12 +69,12 @@ export function DashboardScreen() {
         {/* Stats par emplacement */}
         <div className="grid grid-cols-3 gap-1.5">
           {[
-            { icon: '🧊', label: 'Frigo', value: '5' },
-            { icon: '🗄', label: 'Placard', value: '7' },
-            { icon: '❄️', label: 'Congélateur', value: '1' },
+            { icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"><path d="M14 14.76V3.5a2.5 2.5 0 10-5 0v11.26a4.5 4.5 0 105 0z"/></svg>, label: 'Frigo', value: '5' },
+            { icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>, label: 'Placard', value: '7' },
+            { icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>, label: 'Congélateur', value: '1' },
           ].map(s => (
             <div key={s.label} className="bg-white rounded-xl py-2 px-1 text-center border border-gray-100">
-              <div className="text-sm">{s.icon}</div>
+              <div className="flex items-center justify-center">{s.icon}</div>
               <div className="font-black text-sm mt-0.5">{s.value}</div>
               <div className="text-[8px] text-gray-400 leading-tight">{s.label}</div>
             </div>
@@ -80,7 +83,7 @@ export function DashboardScreen() {
 
         {/* CTA Recettes */}
         <div className="rounded-xl flex items-center gap-2.5 px-3 py-2.5" style={{ background: '#22a085' }}>
-          <span className="text-base">🍽</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
           <div className="flex-1 min-w-0">
             <p className="text-white font-bold text-[10px]">Idées recettes</p>
             <p className="text-white/70 text-[9px]">3 produits à cuisiner rapidement</p>
@@ -96,18 +99,18 @@ export function DashboardScreen() {
           </div>
           <div className="space-y-1.5">
             {[
-              { emoji: '🧀', name: 'Yaourt nature', loc: 'Frigo', qty: '4 pièce', exp: '16 mars 2026' },
-              { emoji: '🥦', name: 'Salade verte',  loc: 'Frigo', qty: '1 pièce', exp: '16 mars 2026' },
+              { name: 'Yaourt nature', loc: 'Frigo', qty: '4 pièce', exp: '16 mars 2026' },
+              { name: 'Salade verte',  loc: 'Frigo', qty: '1 pièce', exp: '16 mars 2026' },
             ].map(item => (
               <div key={item.name} className="bg-white rounded-xl border border-gray-100 px-3 py-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-base leading-none">{item.emoji}</span>
+                  <span className="w-5 h-5 rounded-md bg-red-50 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <p className="text-[10px] font-bold text-gray-800 truncate">{item.name}</p>
                       <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-red-100 text-red-600 shrink-0 ml-1">Périmé</span>
                     </div>
-                    <p className="text-[8px] text-gray-400 mt-0.5">📍 {item.loc} · {item.qty} · Exp: {item.exp}</p>
+                    <p className="text-[8px] text-gray-400 mt-0.5">{item.loc} · {item.qty} · Exp: {item.exp}</p>
                   </div>
                 </div>
                 <div className="mt-1.5 text-[8px] font-semibold text-[#22a085]">✓ Consommé</div>
@@ -125,12 +128,12 @@ export function DashboardScreen() {
 /* ── Inventaire ── */
 export function InventoryScreen() {
   const items = [
-    { emoji: '🧀', name: 'Yaourt nature',   loc: 'Frigo',       qty: '4 pièce', exp: '16 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
-    { emoji: '🥦', name: 'Salade verte',    loc: 'Frigo',       qty: '1 pièce', exp: '16 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
-    { emoji: '🥩', name: 'Poulet rôti',     loc: 'Frigo',       qty: '1 pièce', exp: '17 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
-    { emoji: '🧊', name: 'Pizza surgelée',  loc: 'Congélateur', qty: '1 pièce', exp: '1 juil. 2026', badge: '93 jours',  bc: '#f0fdf4', tc: '#16a34a' },
-    { emoji: '🍪', name: 'Speculoos',       loc: 'Placard',     qty: '1 tube',  exp: '7 juil. 2026', badge: '99 jours',  bc: '#f0fdf4', tc: '#16a34a' },
-    { emoji: '🍞', name: 'Pâtes spaghetti', loc: 'Placard',     qty: '500g',    exp: '15 sept. 2026',badge: '169 jours', bc: '#f0fdf4', tc: '#16a34a' },
+    { name: 'Yaourt nature',   loc: 'Frigo',       qty: '4 pièce', exp: '16 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
+    { name: 'Salade verte',    loc: 'Frigo',       qty: '1 pièce', exp: '16 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
+    { name: 'Poulet rôti',     loc: 'Frigo',       qty: '1 pièce', exp: '17 mars 2026', badge: 'Périmé',    bc: '#fef2f2', tc: '#dc2626' },
+    { name: 'Pizza surgelée',  loc: 'Congélateur', qty: '1 pièce', exp: '1 juil. 2026', badge: '93 jours',  bc: '#f0fdf4', tc: '#16a34a' },
+    { name: 'Speculoos',       loc: 'Placard',     qty: '1 tube',  exp: '7 juil. 2026', badge: '99 jours',  bc: '#f0fdf4', tc: '#16a34a' },
+    { name: 'Pâtes spaghetti', loc: 'Placard',     qty: '500g',    exp: '15 sept. 2026',badge: '169 jours', bc: '#f0fdf4', tc: '#16a34a' },
   ];
   return (
     <div className="w-full h-full bg-[#f5f6f7] flex flex-col text-[#111]" style={{ fontSize: 11 }}>
@@ -157,13 +160,13 @@ export function InventoryScreen() {
         {items.map(item => (
           <div key={item.name} className="bg-white rounded-xl border border-gray-100 px-2.5 py-2">
             <div className="flex items-center gap-2">
-              <span className="text-base leading-none">{item.emoji}</span>
+              <span className="w-5 h-5 rounded-md flex items-center justify-center shrink-0" style={{ background: item.bc }}><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={item.tc} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-1">
                   <p className="text-[10px] font-bold text-gray-800 truncate">{item.name}</p>
                   <span className="text-[7px] font-bold px-1.5 py-0.5 rounded-full shrink-0" style={{ background: item.bc, color: item.tc }}>{item.badge}</span>
                 </div>
-                <p className="text-[7.5px] text-gray-400 mt-0.5">📍 {item.loc} · {item.qty} · Exp: {item.exp}</p>
+                <p className="text-[7.5px] text-gray-400 mt-0.5">{item.loc} · {item.qty} · Exp: {item.exp}</p>
               </div>
             </div>
             <div className="mt-1 text-[7.5px] font-semibold text-[#22a085]">✓ Consommé</div>
@@ -181,14 +184,14 @@ export function AlertsScreen() {
   return (
     <div className="w-full h-full bg-[#f5f6f7] flex flex-col text-[#111]" style={{ fontSize: 11 }}>
       <div className="bg-white px-4 pt-3 pb-2.5 border-b border-gray-100">
-        <p className="text-gray-400 text-[9px]">Bonjour 👋</p>
+        <p className="text-gray-400 text-[9px]">Bonjour</p>
         <p className="font-black text-base leading-tight">Mon Frigo</p>
       </div>
       <div className="flex-1 overflow-hidden px-3 py-2.5 space-y-2">
         {/* Grande alerte */}
         <div className="rounded-xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #ff6b6b, #ee5a24)' }}>
           <div className="px-3 py-3">
-            <p className="text-white font-bold text-[11px]">⚠ Attention !</p>
+            <p className="text-white font-bold text-[11px] flex items-center gap-1"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Attention !</p>
             <p className="text-white font-black text-base mt-0.5">5 produits périmés</p>
             <div className="flex gap-1 flex-wrap mt-2">
               {['Lait entier', 'Yaourt nature', 'Poulet rôti', 'Salade verte', 'Tomates'].map(p => (
@@ -203,14 +206,14 @@ export function AlertsScreen() {
           <p className="text-[9px] font-bold text-gray-600 mb-1.5">À consommer rapidement</p>
           <div className="space-y-1.5">
             {[
-              { emoji: '🧀', name: 'Yaourt nature', exp: '16 mars 2026' },
-              { emoji: '🥦', name: 'Salade verte',  exp: '16 mars 2026' },
-              { emoji: '🥩', name: 'Poulet rôti',   exp: '17 mars 2026' },
-              { emoji: '🥦', name: 'Tomates',       exp: '18 mars 2026' },
+              { name: 'Yaourt nature', exp: '16 mars 2026' },
+              { name: 'Salade verte',  exp: '16 mars 2026' },
+              { name: 'Poulet rôti',   exp: '17 mars 2026' },
+              { name: 'Tomates',       exp: '18 mars 2026' },
             ].map(item => (
               <div key={item.name} className="bg-white rounded-xl border border-gray-100 px-3 py-2">
                 <div className="flex items-center gap-2">
-                  <span className="text-base leading-none">{item.emoji}</span>
+                  <span className="w-5 h-5 rounded-md bg-red-50 flex items-center justify-center shrink-0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
                       <p className="text-[10px] font-bold text-gray-800">{item.name}</p>
@@ -294,7 +297,7 @@ export function AddProductScreen() {
         <div>
           <p className="text-[8.5px] font-semibold text-gray-500 uppercase tracking-wider mb-1">Nom du produit</p>
           <div className="bg-white border border-gray-200 rounded-xl px-3 py-2 flex items-center gap-2">
-            <span className="text-base">🔍</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             <span className="text-[10px] text-gray-400">Ex: Yaourt nature, Lait…</span>
           </div>
         </div>
@@ -304,12 +307,12 @@ export function AddProductScreen() {
           <p className="text-[8.5px] font-semibold text-gray-500 uppercase tracking-wider mb-1">Emplacement</p>
           <div className="grid grid-cols-3 gap-1.5">
             {[
-              { label: 'Frigo', emoji: '🧊', active: true },
-              { label: 'Placard', emoji: '🗄', active: false },
-              { label: 'Congélateur', emoji: '❄️', active: false },
+              { label: 'Frigo', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2" strokeLinecap="round"><path d="M14 14.76V3.5a2.5 2.5 0 10-5 0v11.26a4.5 4.5 0 105 0z"/></svg>, active: true },
+              { label: 'Placard', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>, active: false },
+              { label: 'Congélateur', icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>, active: false },
             ].map(loc => (
               <div key={loc.label} className={`rounded-xl py-2 flex flex-col items-center gap-0.5 border text-center ${loc.active ? 'border-[#22a085] bg-[#f0faf9]' : 'border-gray-200 bg-white'}`}>
-                <span className="text-sm">{loc.emoji}</span>
+                <span>{loc.icon}</span>
                 <span className={`text-[8px] font-semibold ${loc.active ? 'text-[#22a085]' : 'text-gray-500'}`}>{loc.label}</span>
               </div>
             ))}
@@ -401,7 +404,6 @@ export function RecipesGeneratingScreen() {
 export function RecipesResultScreen() {
   const recipes = [
     {
-      emoji: '🍝',
       name: 'Pâtes au poulet & parmesan',
       time: '20 min',
       diff: 'Facile',
@@ -409,7 +411,6 @@ export function RecipesResultScreen() {
       bg: '#0f2523',
     },
     {
-      emoji: '🥗',
       name: 'Salade yaourt & speculoos',
       time: '10 min',
       diff: 'Très facile',
@@ -417,7 +418,6 @@ export function RecipesResultScreen() {
       bg: '#1e3a5f',
     },
     {
-      emoji: '🍕',
       name: 'Pizza gratinée maison',
       time: '25 min',
       diff: 'Facile',
@@ -450,7 +450,7 @@ export function RecipesResultScreen() {
             <div className="px-3 py-2.5" style={{ background: r.bg }}>
               <div className="flex items-start justify-between gap-1">
                 <div className="flex items-start gap-1.5">
-                  <span className="text-base leading-none">{r.emoji}</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" style={{flexShrink:0,marginTop:1}}><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
                   <div>
                     <p className="text-white font-bold text-[9.5px] leading-tight">{r.name}</p>
                     <p className="text-white/50 text-[7.5px] mt-0.5">{r.time} · {r.diff}</p>

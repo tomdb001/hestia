@@ -40,17 +40,17 @@ export default function Marketing() {
           >
             {[
               {
-                icon: '🗑',
+                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>,
                 title: 'Aliments oubliés',
                 desc: "Vous ouvrez le frigo et trouvez une salade noircie, un yaourt périmé depuis une semaine. Vous ne l'aviez même pas remarqué.",
               },
               {
-                icon: '💸',
+                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>,
                 title: 'Argent gâché',
                 desc: "En moyenne, un belge jette 174 € d'aliments par an. Des produits achetés, jamais consommés, directement à la poubelle.",
               },
               {
-                icon: '🌍',
+                icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>,
                 title: 'Impact environnemental',
                 desc: "Le gaspillage alimentaire représente 3,3 gigatonnes de gaz à effet de serre par an. Chaque produit jeté a un coût planétaire.",
               },
@@ -61,7 +61,7 @@ export default function Marketing() {
                 className="p-6 rounded-2xl border border-white/8"
                 style={{ background: 'rgba(255,255,255,0.04)' }}
               >
-                <div className="text-3xl mb-4">{item.icon}</div>
+                <div className="mb-4 w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">{item.icon}</div>
                 <h3 className="text-white font-bold text-base mb-2">{item.title}</h3>
                 <p className="text-white/45 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
@@ -97,28 +97,28 @@ export default function Marketing() {
           >
             {[
               {
-                icon: '📋',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>,
                 problem: 'Aliments oubliés',
                 solution: 'Inventaire en temps réel',
                 desc: 'Frigo, placard, congélateur : tout est visible en un regard.',
                 color: '#30938d',
               },
               {
-                icon: '⏰',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>,
                 problem: 'Produits périmés',
                 solution: 'Alertes 48h à l\'avance',
                 desc: "Hestia vous notifie avant qu'il ne soit trop tard. Vous savez quoi cuisiner ce soir pour ne rien perdre.",
                 color: '#f97316',
               },
               {
-                icon: '🍽',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>,
                 problem: 'Pas d\'idées de recettes',
                 solution: 'Recettes générées par l\'IA',
                 desc: "L'IA analyse votre inventaire et génère des recettes adaptées à ce que vous avez. Sans effort de votre part.",
                 color: '#8b5cf6',
               },
               {
-                icon: '➕',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>,
                 problem: 'Saisie fastidieuse',
                 solution: 'Ajout en 10 secondes',
                 desc: "Nom, emplacement, quantité, date de péremption. L'ajout d'un produit prend 10 secondes, même pour les enfants.",
@@ -131,7 +131,7 @@ export default function Marketing() {
                 className="p-6 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-xl" style={{ background: `${item.color}12` }}>
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${item.color}12`, color: item.color }}>
                     {item.icon}
                   </div>
                   <div>

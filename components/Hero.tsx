@@ -140,13 +140,13 @@ function RecipesMini() {
       </div>
       <div className="flex-1 overflow-hidden px-2 py-1.5 space-y-1.5">
         {[
-          { emoji: '🥗', name: 'Bol épinards saumon', time: '20 min', bg: '#0f2523' },
-          { emoji: '🍳', name: 'Omelette aux herbes', time: '10 min', bg: '#4c1d95' },
-          { emoji: '🥙', name: 'Wrap au saumon', time: '8 min', bg: '#7c2d12' },
+          { name: 'Bol épinards saumon', time: '20 min', bg: '#0f2523' },
+          { name: 'Omelette aux herbes', time: '10 min', bg: '#4c1d95' },
+          { name: 'Wrap au saumon', time: '8 min', bg: '#7c2d12' },
         ].map(r => (
           <div key={r.name} className="rounded-lg overflow-hidden">
             <div className="px-2.5 py-1.5 flex items-center gap-1.5" style={{ background: r.bg }}>
-              <span className="text-sm">{r.emoji}</span>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
               <div>
                 <p className="text-white font-bold text-[9px]">{r.name}</p>
                 <p className="text-white/40 text-[7px]">{r.time}</p>

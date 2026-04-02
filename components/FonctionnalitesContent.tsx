@@ -85,24 +85,6 @@ export default function FonctionnalitesContent() {
           </p>
         </motion.div>
 
-        {/* Nav rapide */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.2 }}
-          className="mt-10 flex flex-wrap gap-2 justify-center px-6"
-        >
-          {[
-            { label: '🏠 Tableau de bord', href: '#dashboard' },
-            { label: '📦 Inventaire', href: '#inventaire' },
-            { label: '➕ Ajout produit', href: '#ajout' },
-            { label: '⚠️ Alertes', href: '#alertes' },
-            { label: '🍽 Recettes', href: '#recettes' },
-          ].map(l => (
-            <a key={l.href} href={l.href} className="px-4 py-2 rounded-full border border-gray-200 text-sm text-gray-600 font-medium hover:border-[#30938d] hover:text-[#30938d] transition-colors">
-              {l.label}
-            </a>
-          ))}
-        </motion.div>
       </section>
 
       {/* ── 1. TABLEAU DE BORD ── */}
