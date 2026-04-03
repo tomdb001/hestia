@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from './CartContext';
+import { trackBeginCheckout, trackPurchase } from '@/lib/gtag';
 
 export default function CheckoutContent() {
   const router = useRouter();
@@ -13,6 +14,8 @@ export default function CheckoutContent() {
   const [loading, setLoading] = useState(false);
 
   const total = (173.99 * Math.max(count, 1)).toFixed(2).replace('.', ',');
+
+  useEffect(() => { trackBeginCheckout(); }, []);
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,6 +31,7 @@ export default function CheckoutContent() {
       localStorage.setItem('hestia_last_email', form.email);
       localStorage.setItem('hestia_last_prenom', form.prenom);
     } catch (_) {}
+    trackPurchase();
     closeCart();
     router.push('/merci');
   }

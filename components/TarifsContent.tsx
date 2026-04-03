@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useCart } from './CartContext';
-
+import { trackAddToCart } from '@/lib/gtag';
 
 export default function TarifsContent() {
   const { add, openCart } = useCart();
@@ -12,6 +12,7 @@ export default function TarifsContent() {
   function handleAddToCart() {
     add();
     setAdded(true);
+    trackAddToCart();
   }
 
   const inclus = [
